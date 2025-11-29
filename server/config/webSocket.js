@@ -4,7 +4,7 @@ const Order = require('../model/orderModel');
 module.exports = function (server) {
   const io = new Server(server, {
     cors: {
-      origin: 'http://localhost:5173',
+      origin: ['https://skill-hub-client.onrender.com'],
       methods: ['GET', 'POST'],
     },
   });
