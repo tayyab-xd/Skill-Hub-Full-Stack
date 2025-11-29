@@ -58,7 +58,7 @@ const Navbar = () => {
             <div className="container mx-auto px-4 sm:px-6 lg:px-8">
                 <div className="flex items-center justify-between h-20">
                     <NavLink to={loggedIn ? (mode ? '/courses' : '/gigs') : '/login'}>
-                        <img className='h-14 w-auto' src="Logo.png" alt="Skill Hub Logo" />
+                        <img className='h-14 w-auto' src="/Logo.png" alt="Skill Hub Logo" />
                     </NavLink>
 
                     {loggedIn && (
