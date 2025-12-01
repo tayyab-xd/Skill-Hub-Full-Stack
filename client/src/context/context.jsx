@@ -88,6 +88,8 @@ const Appprovider = ({ children }) => {
         const token = localStorage.getItem('token')
         if (token) {
             dispatch({ type: 'LOGGED_IN', payload: true })
+        }else{
+            navigate('/login')
         }
     }, [])
 
