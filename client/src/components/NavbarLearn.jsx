@@ -13,6 +13,7 @@ function NavbarLearn() {
         localStorage.removeItem('token');
         localStorage.removeItem('email');
         localStorage.removeItem('name');
+        localStorage.removeItem('isAdmin');
         localStorage.removeItem('userId');
         dispatch({ type: 'LOGGED_IN', payload: false })
         navigate('/login')
