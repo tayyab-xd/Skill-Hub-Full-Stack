@@ -20,13 +20,11 @@ import Orders from './pages/Orders';
 import Check from './pages/Check';
 import AdminPage from './pages/Admin';
 import ResetPassword from './pages/Resetpassword';
-import MyCourses from   './pages/MyCourses'
-import MyGigs from   './pages/MyGigs'
-import Payment from   './pages/Payment'
+import MyCourses from './pages/MyCourses'
+import MyGigs from './pages/MyGigs'
+import Payment from './pages/Payment'
 
 function App() {
-  const token = localStorage.getItem("token");
-
 
   return (
     <BrowserRouter>
@@ -35,29 +33,32 @@ function App() {
         <ToastContainer />
         <Routes>
           {/* Public Routes */}
-          <Route path='/login' element={<Login />} />
-          <Route path='/signup' element={<Signup />} />
+          <Route path="/login" element={<Login />} />
+          <Route path="/signup" element={<Signup />} />
 
-          {/* Protected Routes */}
-          <Route path='/admin' element={token ? <AdminPage /> : <Navigate to="/login" replace />} />
-          <Route path='/courses' element={token ? <Courses /> : <Navigate to="/login" replace />} />
-          <Route path='/check' element={token ? <Check /> : <Navigate to="/login" replace />} />
-          <Route path='/upload' element={token ? <UploadCourse /> : <Navigate to="/login" replace />} />
-          <Route path='/singlecourse/:id' element={token ? <SingleCourse /> : <Navigate to="/login" replace />} />
-          <Route path='/profile/:id' element={token ? <Profile /> : <Navigate to="/login" replace />} />
-          <Route path='/edit-profile' element={token ? <EditProfile /> : <Navigate to="/login" replace />} />
-          <Route path='/edit-course' element={token ? <EditCourse /> : <Navigate to="/login" replace />} />
-          <Route path='/earn' element={token ? <EarnHome /> : <Navigate to="/login" replace />} />
-          <Route path='/learn' element={token ? <Learn /> : <Navigate to="/login" replace />} />
-          <Route path='/uploadgig' element={token ? <UploadGig /> : <Navigate to="/login" replace />} />
-          <Route path='/gigs' element={token ? <Gigs /> : <Navigate to="/login" replace />} />
-          <Route path='/singlegig/:id' element={token ? <SingleGig /> : <Navigate to="/login" replace />} />
-          <Route path='/orders' element={token ? <Orders /> : <Navigate to="/login" replace />} />
-          <Route path='/reset-password' element={<ResetPassword />} />
-          <Route path='/mycourses' element={<MyCourses />} />
-          <Route path='/mygigs' element={<MyGigs />} />
-          <Route path='/payment' element={<Payment />} />
+          {/* Simple Routes */}
+          <Route path="/admin" element={<AdminPage />} />
+          <Route path="/courses" element={<Courses />} />
+          <Route path="/check" element={<Check />} />
+          <Route path="/upload" element={<UploadCourse />} />
+          <Route path="/singlecourse/:id" element={<SingleCourse />} />
+          <Route path="/profile/:id" element={<Profile />} />
+          <Route path="/edit-profile" element={<EditProfile />} />
+          <Route path="/edit-course" element={<EditCourse />} />
+          <Route path="/earn" element={<EarnHome />} />
+          <Route path="/learn" element={<Learn />} />
+          <Route path="/uploadgig" element={<UploadGig />} />
+          <Route path="/gigs" element={<Gigs />} />
+          <Route path="/singlegig/:id" element={<SingleGig />} />
+          <Route path="/orders" element={<Orders />} />
+
+          {/* Public */}
+          <Route path="/reset-password" element={<ResetPassword />} />
+          <Route path="/mycourses" element={<MyCourses />} />
+          <Route path="/mygigs" element={<MyGigs />} />
+          <Route path="/payment" element={<Payment />} />
         </Routes>
+
       </Appprovider>
     </BrowserRouter>
   )
