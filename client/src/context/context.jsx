@@ -19,6 +19,7 @@ const Appprovider = ({ children }) => {
         filterGigs: [],
         profileData: [],
         learnMode: true,
+        loggedIn:false
     }
     const [state, dispatch] = useReducer(reducer, initialState)
     const location = useLocation();
